@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./style.scss";
 
 export interface WelcomeScreenProps {}
 
 export const WelcomeScreen: React.FC<WelcomeScreenProps> = () => {
+  const navigate = useNavigate();
+  const handleGo = useCallback(() => {
+    navigate("/quiz");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <div className="flex max-w-full justify-center flex-col select-none">
@@ -15,10 +22,15 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = () => {
           Welcome to the Trivia Challenge!
         </h3>
         <h4 className="relative animate-fromright text-4md text-gray-300 font-bold font-sans subpixel-antialiased">
-          You will be presented with 10 True or False questions.
+          You will be presented with 10 multiple selection questions.
         </h4>
         <div className=" flex  self-center animate-fade">
-          <div className="pulse project-view justify-center w-[150px]">GO!</div>
+          <div
+            className="pulse project-view justify-center w-[150px]"
+            onClick={handleGo}
+          >
+            GO!
+          </div>
         </div>
       </div>
     </>

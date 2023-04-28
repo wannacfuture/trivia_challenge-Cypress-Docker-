@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       animation: {
         fromtop: "fromtop 0.5s ease-out ",
-        fade: "fade 2s ease-in 1s backwards",
+        fade: "fade 1s ease-in 1s backwards",
+        fadeshort: "fade 1s ease-in 0s backwards",
         fromleft: "fromleft 0.3s ease-in 0.4s backwards ",
         fromright: "fromright 0.3s ease-in 0.6s backwards ",
       },

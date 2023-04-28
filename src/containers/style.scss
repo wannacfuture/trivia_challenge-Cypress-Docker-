@@ -7,7 +7,6 @@
   color: #ff6961;
   border-width: 0.6px;
   user-select: none;
-  margin: 20px;
   margin-top: 40px;
   margin-left: 0;
   border-radius: 5px !important;
@@ -136,4 +135,33 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.wrong-answer {
+  height: 400px;
+  padding-right: 20px !important;
+  width: 600px !important;
+  overflow-y: scroll;
+}
+ul::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+ul::-webkit-scrollbar-track {
+  margin-top: 10px;
+  border-radius: 5px;
+  background: #f1f1f1;
+  margin-bottom: 10px;
+}
+
+/* Handle */
+ul::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #888;
+}
+
+/* Handle on hover */
+ul::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
