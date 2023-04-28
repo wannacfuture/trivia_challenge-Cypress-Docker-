@@ -1,0 +1,57 @@
+.project-view {
+  font-size: medium;
+  font-family: fantasy;
+  padding: 10px;
+  border: solid;
+  box-shadow: rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px;
+  color: #ff6961;
+  border-width: 0.6px;
+  user-select: none;
+  margin: 20px;
+  margin-top: 40px;
+  margin-left: 0;
+  border-radius: 5px !important;
+}
+.project-view:hover {
+  background-color: rgba(255, 105, 97, 0.6);
+  cursor: pointer;
+  color: white;
+}
+.project-view:active {
+  background-color: rgba(72, 187, 163, 0);
+  cursor: pointer;
+  color: white;
+}
+.pulse {
+  margin: 100px;
+  display: block;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(255, 105, 97, 0.4);
+  animation: pulse 2s infinite;
+}
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 105, 97, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 20px rgba(255, 105, 97, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 105, 97, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 105, 97, 0.4);
+    box-shadow: 0 0 0 0 rgba(255, 105, 97, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 20px rgba(255, 105, 97, 0);
+    box-shadow: 0 0 0 20px rgba(255, 105, 97, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 105, 97, 0);
+    box-shadow: 0 0 0 0 rgba(255, 105, 97, 0);
+  }
+}
