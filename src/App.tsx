@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { WelcomeScreen } from "./containers";
+import { WelcomeScreen, LoadingScreen } from "./containers";
 
 import "./App.css";
 
@@ -9,7 +9,9 @@ function App() {
     <div className="App flex flex-col justify-center">
       <BrowserRouter>
         <Routes>
-          <Route index element={<WelcomeScreen />} />
+          <Route path="welcome" element={<WelcomeScreen />} />
+          <Route index element={<LoadingScreen firstLoad={true} />} />
+          <Route path="quiz" element={<LoadingScreen firstLoad={false} />} />
         </Routes>
       </BrowserRouter>
     </div>
