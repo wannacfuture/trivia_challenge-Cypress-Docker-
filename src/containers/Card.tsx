@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { concat, shuffle, uniqueId } from "lodash";
+import { concat, shuffle } from "lodash";
 
 import "./cardstyle.scss";
 import { cardProp } from "../types";

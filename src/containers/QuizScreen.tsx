@@ -5,15 +5,13 @@ import { Card } from "./Card";
 
 import "./style.scss";
 import { LoadingScreen } from "./LoadingScreen";
-import { result, template, uniqueId } from "lodash";
-import { useNavigate } from "react-router-dom";
+import { uniqueId } from "lodash";
 import { cardProp } from "../types";
 import { ResultScreen } from "./Result";
 
 export interface QuizScreenProps {}
 
 export const QuizScreen: React.FC<QuizScreenProps> = () => {
-  const navigate = useNavigate();
   const [pageNum, setPageNum] = useState(0);
   const [res, setRes] = useState<cardProp[]>([]);
   const [yourAns, setYourAns] = useState<string[]>([]);

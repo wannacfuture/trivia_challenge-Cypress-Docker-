@@ -1,8 +1,9 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./style.scss";
 import { cardProp } from "../types";
+import { uniqueId } from "lodash";
 
 export interface ResultScreenProps {
   res: cardProp[];
@@ -30,7 +31,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ res, yourAns }) => {
           <ul className="wrong-answer justify-center self-center">
             {res.map((val, index) => {
               return (
-                <li>
+                <li key={uniqueId()}>
                   <div
                     className="mb-1 "
                     dangerouslySetInnerHTML={{
@@ -59,7 +60,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ res, yourAns }) => {
           </ul>
         </div>
         <div>
-          <div className=" flex  self-center justify-center">
+          <div className=" flex self-center justify-center">
             <div className="project-view w-[150px]" onClick={onHandleClick}>
               Got it
             </div>
