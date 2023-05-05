@@ -13,6 +13,7 @@ export interface QuizScreenProps {}
 
 export const QuizScreen: React.FC<QuizScreenProps> = () => {
   const [pageNum, setPageNum] = useState(0);
+  const [totalCount, setTotalCount] = useState(0);
   const [res, setRes] = useState<cardProp[]>([]);
   const [yourAns, setYourAns] = useState<string[]>([]);
 
@@ -32,6 +33,10 @@ export const QuizScreen: React.FC<QuizScreenProps> = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if (data) setTotalCount(data.results.length);
+  }, [data]);
+
   const onHandleNext = (selectedAns: string) => {
     if (selectedAns !== data.results[pageNum].correct_answer)
       setRes((res) => {
@@ -48,7 +53,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = () => {
   };
 
   if (isFetching) return <LoadingScreen firstLoad={false} />;
-  if (pageNum < 10)
+  if (data && pageNum < totalCount)
     return (
       data && (
         <>
